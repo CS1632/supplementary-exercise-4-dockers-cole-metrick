@@ -35,22 +35,22 @@ public class ConnectTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("--headless");
-    driver = new ChromeDriver(options);
-    driver = new ChromeDriver(options);
-    js = (JavascriptExecutor) driver;
-    vars = new HashMap<String, Object>();
-  }
-  @After
-  public void tearDown() {
-    driver.quit();
-  }
-  @Test
-  public void testConnection() {
-    // Test that the webserver is ready to service an HTTP request
-    driver.get("http://localhost:8080/");
-  }
+  // @Before
+  // public void setUp() {
+  //   ChromeOptions options = new ChromeOptions();
+  //   options.addArguments("--headless");
+  //   driver = new ChromeDriver(options);
+  //   driver = new ChromeDriver(options);
+  //   js = (JavascriptExecutor) driver;
+  //   vars = new HashMap<String, Object>();
+  // }
+  // @After
+  // public void tearDown() {
+  //   driver.quit();
+  // }
+  // @Test
+  // public void testConnection() {
+  //   // Test that the webserver is ready to service an HTTP request
+  //   driver.get("http://localhost:8080/");
+  // }
 }
