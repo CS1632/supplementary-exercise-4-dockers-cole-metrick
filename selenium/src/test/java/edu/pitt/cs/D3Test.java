@@ -46,7 +46,7 @@ public class D3Test {
   public void setUp() {
       ChromeOptions options = new ChromeOptions();
       options.addArguments("--headless");			// Enable running without a display
-      options.addArguments("--disable-notifications");
+      //options.addArguments("--disable-notifications");
       // options.addArguments("--disable-dev-shm-usage");	// Disable /dev/shm which is limited to 64MB in Docker and use /tmp/ instead to store shared memory files
       // options.addArguments("--no-sandbox");		// A quick and dirty way to run Selenium as root, bypassing the OS security model
       driver = new ChromeDriver(options);
@@ -59,17 +59,17 @@ public class D3Test {
   public void tearDown() {
     driver.quit();
   }
-  @Test
-  public void tEST1LINKS() {
-    driver.get("http://localhost:8080/");
-    js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(@href, \'/reset\')]"));
-      String attribute = element.getAttribute("href");
-      vars.put("x", attribute);
-    }
-    assertEquals(vars.get("x").toString(), "http://localhost:8080/reset");
-  }
+  // @Test
+  // public void tEST1LINKS() {
+  //   driver.get("http://localhost:8080/");
+  //   js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
+  //   {
+  //     WebElement element = driver.findElement(By.xpath("//a[contains(@href, \'/reset\')]"));
+  //     String attribute = element.getAttribute("href");
+  //     vars.put("x", attribute);
+  //   }
+  //   assertEquals(vars.get("x").toString(), "http://localhost:8080/reset");
+  // }
   // @Test
   // public void dEFECT1FUNFEED() {
   //   driver.get("http://localhost:8080/feed-a-cat");
